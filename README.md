@@ -1,7 +1,24 @@
-# Vue 3 + Vite
+# Ironhack Final Project - Group 3
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<div align="center">
+  <p>Made with 💙&nbsp;&nbsp;by</p>
+  <a href="https://github.com/evagapi/ironhack-final-project-group-3/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=evagapi/ironhack-final-project-group-3">
+  </a>
+</div>
 
-## Recommended IDE Setup
+## Install Dependencies
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+To work in this project, install the dependencies using npm:
+
+```
+npm install
+```
+
+## Format your code 💅
+
+To format all the code in this project we are using Prettier, you can run the following command to format all the files:
+
+```
+npm run format
+```

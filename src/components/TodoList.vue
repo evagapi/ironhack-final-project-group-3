@@ -6,6 +6,7 @@
     :model="formValue"
     :rules="rules"
     size="large"
+    class="task-input"
     @submit="handleSubmit"
   >
     <n-form-item path="task">
@@ -16,7 +17,7 @@
     </n-form-item>
   </NForm>
 
-  <ul>
+  <ul class="tasks-list">
     <li v-for="task in tasks" :key="task.title">
       <n-checkbox v-model:checked="task.isDone"> {{ task.title }} </n-checkbox>
     </li>
@@ -78,3 +79,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.task-input {
+  padding: 1rem;
+}
+.tasks-list {
+  list-style-type: none;
+}
+</style>

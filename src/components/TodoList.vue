@@ -18,13 +18,14 @@
   </NForm>
 
   <ul class="tasks-list">
-    <li v-for="task in tasks" :key="task.title">
+    <li v-for="task in TasksStore.tasks" :key="task.title">
       <n-checkbox v-model:checked="task.isDone"> {{ task.title }} </n-checkbox>
     </li>
   </ul>
 </template>
 
 <script>
+import { useTasksStore } from "../stores/TasksStore";
 import {
   NForm,
   NFormItem,
@@ -47,7 +48,6 @@ export default {
   },
   data() {
     return {
-      tasks: [],
       formValue: {
         task: "",
       },
@@ -58,6 +58,7 @@ export default {
           trigger: ["input"],
         },
       },
+      TasksStore: useTasksStore(),
     };
   },
 
@@ -67,7 +68,10 @@ export default {
       this.$refs.form
         .validate()
         .then(() => {
-          this.tasks.push({ title: this.formValue.task, isDone: false });
+          this.TasksStore.tasks.push({
+            title: this.formValue.task,
+            isDone: false,
+          });
           this.formValue.task = "";
           this.message.success("New task added");
         })

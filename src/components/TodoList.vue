@@ -1,30 +1,34 @@
 <template>
-  <NForm
-    ref="form"
-    inline
-    :label-width="80"
-    :model="formValue"
-    :rules="rules"
-    size="large"
-    class="task-input"
-    @submit="handleSubmit"
-  >
-    <n-form-item path="task">
-      <n-input v-model:value="formValue.task" placeholder="Task" />
-    </n-form-item>
-    <n-form-item>
-      <n-button attr-type="submit"> Add </n-button>
-    </n-form-item>
-  </NForm>
+  <div class="form-wrapper">
+    <NForm
+      ref="formRef"
+      inline
+      :label-width="80"
+      :model="formValue"
+      :rules="rules"
+      size="large"
+      @submit="handleSubmit"
+    >
+      <n-form-item path="task">
+        <n-input v-model:value="formValue.task" placeholder="Task" />
+      </n-form-item>
+      <n-form-item>
+        <n-button attr-type="submit"> Add </n-button>
+      </n-form-item>
+    </NForm>
 
-  <ul class="tasks-list">
-    <li v-for="task in TasksStore.tasks" :key="task.title">
-      <n-checkbox v-model:checked="task.isDone"> {{ task.title }} </n-checkbox>
-    </li>
-  </ul>
+    <p v-if="tasks.length > 0">To do</p>
+    <ul class="tasks-list">
+      <li v-for="task in tasks" :key="task.title">
+        <n-checkbox v-model:checked="task.isDone">
+          {{ task.title }}
+        </n-checkbox>
+      </li>
+    </ul>
+  </div>
 </template>
 
-<script>
+<script setup>
 import { useTasksStore } from "../stores/TasksStore";
 import {
   NForm,
@@ -34,59 +38,48 @@ import {
   NCheckbox,
   useMessage,
 } from "naive-ui";
-export default {
-  components: {
-    NForm,
-    NFormItem,
-    NInput,
-    NButton,
-    NCheckbox,
-  },
-  setup() {
-    const message = useMessage();
-    return { message };
-  },
-  data() {
-    return {
-      formValue: {
-        task: "",
-      },
-      rules: {
-        task: {
-          required: true,
-          message: "Please enter your task",
-          trigger: ["input"],
-        },
-      },
-      TasksStore: useTasksStore(),
-    };
-  },
+import { reactive, ref } from "vue";
 
-  methods: {
-    handleSubmit(e) {
-      e.preventDefault();
-      this.$refs.form
-        .validate()
-        .then(() => {
-          this.TasksStore.tasks.push({
-            title: this.formValue.task,
-            isDone: false,
-          });
-          this.formValue.task = "";
-          this.message.success("New task added");
-        })
-        .catch((errors) => {
-          console.log(errors);
-          this.message.error("A task must not be empty");
-        });
-    },
+const message = useMessage();
+const formValue = reactive({
+  task: "",
+});
+
+const formRef = ref(null);
+
+const rules = {
+  task: {
+    required: true,
+    message: "Please enter your task",
+    trigger: ["input"],
   },
 };
+
+const { tasks, addTask } = useTasksStore();
+
+function handleSubmit(e) {
+  e.preventDefault();
+  formRef.value
+    ?.validate()
+    .then(() => {
+      addTask({
+        title: formValue.task,
+        isDone: false,
+      });
+      formValue.task = "";
+      message.success("New task added");
+    })
+    .catch((errors) => {
+      console.log(errors);
+      message.error("A task must not be empty");
+    });
+}
 </script>
 
 <style scoped>
-.task-input {
+.form-wrapper {
   padding: 1rem;
+  margin: auto;
 }
 .tasks-list {
   list-style-type: none;

@@ -8,5 +8,9 @@ export const useTasksStore = defineStore("tasks", () => {
     tasks.push(task);
   }
 
-  return { tasks, addTask };
+  function getTaskByGroup(group) {
+    return tasks.filter((task) => task.group === group);
+  }
+
+  return { tasks, addTask, getTaskByGroup };
 });

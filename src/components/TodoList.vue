@@ -17,14 +17,19 @@
       </n-form-item>
     </NForm>
 
-    <p v-if="tasks.length > 0">To do</p>
-    <ul class="tasks-list">
-      <li v-for="task in tasks" :key="task.title">
-        <n-checkbox v-model:checked="task.isDone">
+    <div v-for="group in groups" :key="group.value">
+      <h2>{{ group.value }}</h2>
+      <ul>
+        <li
+          v-for="task in getTaskByGroup(group.value)"
+          :key="task.title"
+          class="tasks-list"
+        >
           {{ task.title }}
-        </n-checkbox>
-      </li>
-    </ul>
+          <n-select v-model:value="task.group" :options="groups" />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -35,7 +40,7 @@ import {
   NFormItem,
   NInput,
   NButton,
-  NCheckbox,
+  NSelect,
   useMessage,
 } from "naive-ui";
 import { reactive, ref } from "vue";
@@ -47,6 +52,17 @@ const formValue = reactive({
 
 const formRef = ref(null);
 
+const groups = [
+  {
+    label: "todo",
+    value: "todo",
+  },
+  {
+    label: "done",
+    value: "done",
+  },
+];
+
 const rules = {
   task: {
     required: true,
@@ -55,7 +71,7 @@ const rules = {
   },
 };
 
-const { tasks, addTask } = useTasksStore();
+const { addTask, getTaskByGroup } = useTasksStore();
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -64,7 +80,7 @@ function handleSubmit(e) {
     .then(() => {
       addTask({
         title: formValue.task,
-        isDone: false,
+        group: "todo",
       });
       formValue.task = "";
       message.success("New task added");

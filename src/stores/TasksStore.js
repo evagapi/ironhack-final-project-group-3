@@ -2,15 +2,21 @@ import { defineStore } from "pinia";
 import { reactive } from "vue";
 
 export const useTasksStore = defineStore("tasks", () => {
-  const tasks = reactive([]);
+  const todoTasks = reactive([]);
+
+  const doneTasks = reactive([]);
 
   function addTask(task) {
-    tasks.push(task);
+    if (task.column === "todo") {
+      todoTasks.push(task);
+    } else if (task.column === "done") {
+      doneTasks.push(task);
+    }
   }
 
-  function getTaskByGroup(group) {
-    return tasks.filter((task) => task.group === group);
+  function getTaskByColumn(column) {
+    return column === "todo" ? todoTasks : doneTasks;
   }
 
-  return { tasks, addTask, getTaskByGroup };
+  return { todoTasks, doneTasks, addTask, getTaskByColumn };
 });

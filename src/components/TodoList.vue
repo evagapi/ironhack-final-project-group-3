@@ -16,21 +16,25 @@
         <n-button attr-type="submit"> Add </n-button>
       </n-form-item>
     </NForm>
-
-    <div v-for="group in groups" :key="group.value">
-      <h2>{{ group.value }}</h2>
-      <ul>
-        <li
-          v-for="task in getTaskByGroup(group.value)"
-          :key="task.title"
-          class="tasks-list"
-        >
-          {{ task.title }}
-          <n-select v-model:value="task.group" :options="groups" />
-        </li>
-      </ul>
-    </div>
   </div>
+  <n-scrollbar x-scrollable>
+    <div class="columns-wrapper">
+      <div v-for="column in columns" :key="column.value">
+        <h3>{{ column.value }}</h3>
+        <draggable
+          class="column"
+          :list="getTaskByColumn(column.value)"
+          group="columns"
+          item-key="title"
+          @change="log"
+        >
+          <template #item="{ element }">
+            <div class="list-group-item">{{ element.title }}</div>
+          </template>
+        </draggable>
+      </div>
+    </div>
+  </n-scrollbar>
 </template>
 
 <script setup>
@@ -40,10 +44,11 @@ import {
   NFormItem,
   NInput,
   NButton,
-  NSelect,
+  NScrollbar,
   useMessage,
 } from "naive-ui";
 import { reactive, ref } from "vue";
+import draggable from "vuedraggable";
 
 const message = useMessage();
 const formValue = reactive({
@@ -52,7 +57,7 @@ const formValue = reactive({
 
 const formRef = ref(null);
 
-const groups = [
+const columns = [
   {
     label: "todo",
     value: "todo",
@@ -71,7 +76,7 @@ const rules = {
   },
 };
 
-const { addTask, getTaskByGroup } = useTasksStore();
+const { addTask, getTaskByColumn } = useTasksStore();
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -80,7 +85,7 @@ function handleSubmit(e) {
     .then(() => {
       addTask({
         title: formValue.task,
-        group: "todo",
+        column: "todo",
       });
       formValue.task = "";
       message.success("New task added");
@@ -90,6 +95,10 @@ function handleSubmit(e) {
       message.error("A task must not be empty");
     });
 }
+
+function log(event) {
+  window.console.log(event);
+}
 </script>
 
 <style scoped>
@@ -97,7 +106,15 @@ function handleSubmit(e) {
   padding: 1rem;
   margin: auto;
 }
-.tasks-list {
-  list-style-type: none;
+
+.columns-wrapper {
+  display: flex;
+  gap: 3em;
+  margin: 0 2em;
+}
+.column {
+  min-height: 300px;
+  width: 140px;
+  background-color: #f2f4f5;
 }
 </style>

@@ -1,12 +1,10 @@
 <template>
-  <div>
+  <n-message-provider>
     <TheHome />
-  </div>
+  </n-message-provider>
 </template>
 
-<script>
+<script setup>
+import { NMessageProvider } from "naive-ui";
 import TheHome from "./components/TheHome.vue";
-export default {
-  components: { TheHome },
-};
 </script>

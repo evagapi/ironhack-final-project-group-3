@@ -5,8 +5,8 @@
   "extends": ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
   "rules": {
     "max-lines": [
-      "error",
-      { "max": 120, "skipBlankLines": true, "skipComments": true }
+      "warn",
+      { "max": 100, "skipBlankLines": true, "skipComments": true }
     ]
   }
 }

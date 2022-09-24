@@ -21,11 +21,21 @@ export const useTasksStore = defineStore("tasks", () => {
     }
   }
 
-  function addTask(task) {
-    if (task.column === "todo") {
+  async function addTask(column, task) {
+    if (column === "todo") {
       todoTasks.push(task);
-    } else if (task.column === "done") {
+      const { error } = await supabase
+        .from("column")
+        .update({ tasks: todoTasks })
+        .match({ name: column });
+      if (error) throw error;
+    } else if (column === "done") {
       doneTasks.push(task);
+      const { error } = await supabase
+        .from("column")
+        .update({ tasks: doneTasks })
+        .match({ name: column });
+      if (error) throw error;
     }
   }
 

@@ -47,8 +47,10 @@ import {
   NScrollbar,
   useMessage,
 } from "naive-ui";
-import { reactive, ref } from "vue";
+import { reactive, ref, onMounted } from "vue";
 import draggable from "vuedraggable";
+
+const { addTask, getTaskByColumn, loadTasks } = useTasksStore();
 
 const message = useMessage();
 const formValue = reactive({
@@ -76,8 +78,6 @@ const rules = {
   },
 };
 
-const { addTask, getTaskByColumn } = useTasksStore();
-
 function handleSubmit(e) {
   e.preventDefault();
   formRef.value
@@ -99,6 +99,10 @@ function handleSubmit(e) {
 function log(event) {
   window.console.log(event);
 }
+
+onMounted(() => {
+  loadTasks();
+});
 </script>
 
 <style scoped>

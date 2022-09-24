@@ -50,7 +50,7 @@ import {
 import { reactive, ref, onMounted } from "vue";
 import draggable from "vuedraggable";
 
-const { addTask, getTaskByColumn, loadTasks } = useTasksStore();
+const { addTask, getTaskByColumn, loadTasks, persistColumns } = useTasksStore();
 
 const message = useMessage();
 const formValue = reactive({
@@ -95,8 +95,8 @@ function handleSubmit(e) {
     });
 }
 
-function log(event) {
-  window.console.log(event);
+function log() {
+  persistColumns();
 }
 
 onMounted(() => {

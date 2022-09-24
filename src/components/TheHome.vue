@@ -2,6 +2,7 @@
   <div>
     <MainNavbar></MainNavbar>
   </div>
+  <LandingPage></LandingPage>
   <div>
     <TodoList></TodoList>
   </div>
@@ -10,5 +11,6 @@
 <script>
 import TodoList from "./TodoList.vue";
 import MainNavbar from "./MainNavbar.vue";
-export default { components: { TodoList, MainNavbar } };
+import LandingPage from "./LandingPage.vue";
+export default { components: { TodoList, MainNavbar, LandingPage } };
 </script>

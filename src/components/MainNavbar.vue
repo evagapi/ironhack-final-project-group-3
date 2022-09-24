@@ -139,6 +139,7 @@ nav {
   top: 0;
   z-index: 10;
   box-shadow: 1px 1px 1px 1px #ddd;
+  position: fixed;
 }
 
 .dark-mode {

@@ -4,83 +4,40 @@ import { reactive } from "vue";
 import { supabase } from "../supabase";
 
 export const useTasksStore = defineStore("tasks", () => {
-  const todoTasks = reactive([]);
+  let dashboard = reactive({});
 
-  const doneTasks = reactive([]);
-
-  async function loadTodoTasks() {
+  async function loadDashboard() {
     const { data, error } = await supabase
-      .from("column")
+      .from("boards")
       .select("*")
-      .eq("name", "todo")
+      .eq("name", "Learning List") //FIXME: Un-hardcode this once we can create several boards / have users
       .single();
     if (error) throw error;
 
-    todoTasks.length = 0;
-    for (let task of data.tasks) {
-      todoTasks.push(task);
-    }
+    Object.assign(dashboard, data);
   }
 
-  async function loadDoneTasks() {
-    const { data, error } = await supabase
-      .from("column")
-      .select("*")
-      .eq("name", "done")
-      .single();
-    if (error) throw error;
+  async function addTask(title) {
+    const task = { title };
 
-    doneTasks.length = 0;
-    for (let task of data.tasks) {
-      doneTasks.push(task);
-    }
+    //FIXME: is this OK? Should we allow to add task to any column?
+    dashboard.columns[0].tasks.push(task);
+
+    await updateDashboard();
   }
 
-  async function loadTasks() {
-    return await Promise.all([loadTodoTasks(), loadDoneTasks()]);
-  }
-
-  async function updateTodoTasks() {
+  async function updateDashboard() {
     const { error } = await supabase
-      .from("column")
-      .update({ tasks: todoTasks })
-      .match({ name: "todo" });
+      .from("boards")
+      .update({ columns: dashboard.columns })
+      .eq("name", "Learning List");
     if (error) throw error;
-  }
-
-  async function updateDoneTasks() {
-    const { error } = await supabase
-      .from("column")
-      .update({ tasks: doneTasks })
-      .match({ name: "done" });
-    if (error) throw error;
-  }
-
-  async function addTask(column, task) {
-    if (column === "todo") {
-      todoTasks.push(task);
-      updateTodoTasks();
-    } else if (column === "done") {
-      doneTasks.push(task);
-      updateDoneTasks();
-    }
-  }
-
-  function persistColumns() {
-    updateTodoTasks();
-    updateDoneTasks();
-  }
-
-  function getTaskByColumn(column) {
-    return column === "todo" ? todoTasks : doneTasks;
   }
 
   return {
-    todoTasks,
-    doneTasks,
-    loadTasks,
+    loadDashboard,
+    dashboard,
     addTask,
-    getTaskByColumn,
-    persistColumns,
+    updateDashboard,
   };
 });

@@ -2,11 +2,11 @@
   <AddTaskForm />
   <n-scrollbar x-scrollable>
     <div class="columns-wrapper">
-      <div v-for="column in columns" :key="column.value">
-        <h3>{{ column.value }}</h3>
+      <div v-for="column in dashboard.columns" :key="column.name">
+        <h3>{{ column.name }}</h3>
         <draggable
           class="column"
-          :list="getTaskByColumn(column.value)"
+          :list="column.tasks"
           group="columns"
           item-key="title"
           @change="onChange"
@@ -28,25 +28,14 @@ import draggable from "vuedraggable";
 import { useTasksStore } from "../stores/TasksStore";
 import AddTaskForm from "./AddTaskForm.vue";
 
-const { getTaskByColumn, loadTasks, persistColumns } = useTasksStore();
-
-const columns = [
-  {
-    label: "todo",
-    value: "todo",
-  },
-  {
-    label: "done",
-    value: "done",
-  },
-];
+const { loadDashboard, dashboard, updateDashboard } = useTasksStore();
 
 function onChange() {
-  persistColumns();
+  updateDashboard();
 }
 
 onMounted(() => {
-  loadTasks();
+  loadDashboard();
 });
 </script>
 

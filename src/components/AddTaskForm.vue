@@ -46,9 +46,7 @@ function handleSubmit(e) {
   formRef.value
     ?.validate()
     .then(() => {
-      addTask("todo", {
-        title: formValue.task,
-      });
+      addTask(formValue.task);
       formValue.task = "";
       message.success("New task added");
     })

@@ -35,7 +35,7 @@
             type="error"
             class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600"
           >
-            <router-link to="/"> Log out </router-link></n-button
+            <router-link to="/login"> Log out </router-link></n-button
           >
         </li>
       </ul>
@@ -129,11 +129,10 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #f0a000;
-  background: linear-gradient(to left, #1190cb, #7dccff);
+  background: #1f2937;
   color: #fff;
   height: 55px;
-  padding: 1em;
+  padding: 2em;
   width: 100%;
   position: sticky;
   top: 0;
@@ -147,12 +146,16 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #f0a000;
-  background: linear-gradient(to left, black, #08415b);
+  background: linear-gradient(to left, black, #06293a);
   color: #fff;
   height: 55px;
-  padding: 1em;
+  padding: 2em;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   box-shadow: 1px 1px 1px 1px #ddd;
+  position: fixed;
 }
 
 .menu {

@@ -19,9 +19,9 @@
         <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
           <div class="justify-items-center content-center p-10">
             <h1
-              class="text-white font-semibold font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600"
+              class="text-white font-semibold font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600 pb-5"
             >
-              Doitify
+              Doitfy
             </h1>
             <h2 class="text-white font-semibold text-4xl">
               Beat your busy life
@@ -47,73 +47,6 @@
               >
                 Start doing more now
               </h2>
-
-              <!-- Section 2  <button
-                  type="button"
-                  class="w-full content-center justify-center text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2"
-                >
-                  <svg
-                    class="mr-2 -ml-1 w-4 h-4"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fab"
-                    data-icon="facebook-f"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"
-                    ></path>
-                  </svg>
-                  Continue with Facebook
-                </button>
-  
-                <button
-                  type="button"
-                  class="w-full content-center justify-center text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2"
-                >
-                  <svg
-                    class="mr-2 -ml-1 w-4 h-4"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fab"
-                    data-icon="twitter"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"
-                    ></path>
-                  </svg>
-                  Continue with Twitter
-                </button>
-  
-                <button
-                  type="button"
-                  class="w-full content-center justify-center text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
-                >
-                  <svg
-                    class="mr-2 -ml-1 w-4 h-4"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fab"
-                    data-icon="google"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 488 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
-                    ></path>
-                  </svg>
-                  Continue with Google
-                </button>
-  -->
               <button
                 type="button"
                 class="w-full content-center justify-center text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
@@ -153,6 +86,9 @@
       </svg>
     </div>
   </div>
+
+  <!-- Component 2 Main features -->
+
   <section class="pb-20 relative block bg-blue-100">
     <div
       class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
@@ -173,9 +109,6 @@
         ></polygon>
       </svg>
     </div>
-
-    <!-- Section 2 -->
-
     <section class="pb-20 bg-blue-100 -mt-24">
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap">
@@ -237,41 +170,87 @@
       </div>
     </section>
 
-    <!-- Carousel Section -->
+    <!-- Component 3 Screenshot and description -->
 
-    <section class="pb-20 bg-blue-100 -mt-24 pt-10">
-      <n-carousel
-        :slides-per-view="3"
-        :space-between="20"
-        :loop="false"
-        draggable
-      >
-        <img
-          class="carousel-img"
-          src="https://i.pinimg.com/originals/43/e6/dc/43e6dc00e1c74610627683db109ebbcb.gif"
-        />
-        <img
-          class="carousel-img"
-          src="https://i.pinimg.com/originals/06/5e/2c/065e2c34e99b072752477a6b58415b60.gif"
-        />
-        <img
-          class="carousel-img"
-          src="https://i.pinimg.com/originals/da/59/5f/da595f9463a8732c6afe522e6bb76746.gif"
-        />
+    <div class="container mx-auto px-4 pb-20 pt-18">
+      <div class="items-center flex flex-wrap">
+        <div class="w-full md:w-5/12 ml-auto px-12 md:px-4">
+          <div class="md:pr-12">
+            <h3 class="text-3xl font-semibold">
+              Discover all that Doitfy has to offer
+            </h3>
+            <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+              maiores eveniet hic nihil, debitis autem repudiandae atque
+              reprehenderit odio. Dolores ut saepe repudiandae iure doloribus
+              beatae sunt rerum laudantium totam!
+            </p>
+            <ul class="list-none mt-6">
+              <li class="py-2">
+                <div class="flex items-center">
+                  <div>
+                    <span
+                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-blueGray-50 mr-3"
+                    >
+                      <i class="fas fa-fingerprint"></i>
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="text-blueGray-500">
+                      Built by Todo People for you people like you
+                    </h4>
+                  </div>
+                </div>
+              </li>
+              <li class="py-2">
+                <div class="flex items-center">
+                  <div>
+                    <span
+                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-blueGray-50 mr-3"
+                    >
+                      <i class="fab fa-html5"></i>
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="text-blueGray-500">
+                      I don´t know what else to write
+                    </h4>
+                  </div>
+                </div>
+              </li>
+              <li class="py-2">
+                <div class="flex items-center">
+                  <div>
+                    <span
+                      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-blueGray-50 mr-3"
+                    >
+                      <i class="far fa-paper-plane"></i>
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="text-blueGray-500">I like writting stuff</h4>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <img
-          class="carousel-img"
-          src="https://i.pinimg.com/originals/43/e6/dc/43e6dc00e1c74610627683db109ebbcb.gif"
-        />
+        <div class="w-full md:w-6/12 mr-auto px-4 pt-24 md:pt-0">
+          <img
+            alt="..."
+            class="max-w-full rounded-lg shadow-xl"
+            style="
+              transform: scale(1) perspective(1040px) rotateY(-11deg)
+                rotateX(2deg) rotate(2deg);
+            "
+            src="https://i.pinimg.com/originals/5e/ee/c1/5eeec15ea8beb9bb0ad2c1246f517c8f.gif"
+          />
+        </div>
+      </div>
+    </div>
 
-        <img
-          class="carousel-img"
-          src="https://i.pinimg.com/originals/06/5e/2c/065e2c34e99b072752477a6b58415b60.gif"
-        />
-      </n-carousel>
-    </section>
-
-    <!-- Section 3 -->
+    <!-- Component 4 Call to action -->
 
     <div class="container mx-auto px-2 lg:pt-08 lg:pb-05">
       <div class="flex flex-wrap text-center justify-center">
@@ -290,7 +269,53 @@
     </div>
   </section>
 
-  <!-- Section About us -->
+  <section class="pb-16 bg-blueGray-200 relative pt-32">
+    <div
+      class="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20"
+      style="transform: translateZ(0)"
+    >
+      <svg
+        class="absolute bottom-0 overflow-hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        version="1.1"
+        viewBox="0 0 2560 100"
+        x="0"
+        y="0"
+      >
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+
+    <div class="container mx-auto">
+      <div
+        class="flex flex-wrap justify-center shadow-xl rounded-lg py-16 px-12 relative z-5"
+      >
+        <div class="w-full text-center lg:w-8/12">
+          <p class="text-4xl text-center"></p>
+          <h3 class="font-semibold text-3xl">Start using Doitfy now!</h3>
+          <p class="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
+            Cause if you do, you will do more in less. Hit the buttons below to
+            navigate to get the Free version for your our app. Start using all
+            our features!
+          </p>
+          <div class="sm:block flex flex-col mt-10">
+            <a
+              href="https://i.pinimg.com/originals/5e/ee/c1/5eeec15ea8beb9bb0ad2c1246f517c8f.gif"
+              target="_blank"
+              class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-emerald-500 active:bg-emerald-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+            >
+              Get started
+            </a>
+          </div>
+          <div class="text-center mt-16"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Component 5 About us -->
+
   <section class="pt-20 pb-18 bg-white">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap justify-center text-center mb-14">
@@ -354,7 +379,7 @@
 </template>
 
 <script>
-import { NCarousel } from "naive-ui";
+import {} from "naive-ui";
 export let isLightMode;
 
 export default {
@@ -362,9 +387,7 @@ export default {
 
   export: { isLightMode },
 
-  components: {
-    NCarousel,
-  },
+  components: {},
 };
 </script>
 
@@ -373,26 +396,5 @@ export default {
 
 * {
   font-family: "Raleway";
-}
-
-.carousel-img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
-.svg-icon {
-  width: 1em;
-  height: 1em;
-}
-
-.svg-icon path,
-.svg-icon polygon,
-.svg-icon rect {
-  fill: #4691f6;
-}
-
-.svg-icon circle {
-  stroke: #4691f6;
-  stroke-width: 1;
 }
 </style>

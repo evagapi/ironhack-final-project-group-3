@@ -1,22 +1,43 @@
 import { defineStore } from "pinia";
 import { reactive } from "vue";
 
+import { supabase } from "../supabase";
+
 export const useTasksStore = defineStore("tasks", () => {
-  const todoTasks = reactive([]);
+  let dashboard = reactive({});
 
-  const doneTasks = reactive([]);
+  async function loadDashboard() {
+    const { data, error } = await supabase
+      .from("boards")
+      .select("*")
+      .eq("name", "Learning List") //FIXME: Un-hardcode this once we can create several boards / have users
+      .single();
+    if (error) throw error;
 
-  function addTask(task) {
-    if (task.column === "todo") {
-      todoTasks.push(task);
-    } else if (task.column === "done") {
-      doneTasks.push(task);
-    }
+    Object.assign(dashboard, data);
   }
 
-  function getTaskByColumn(column) {
-    return column === "todo" ? todoTasks : doneTasks;
+  async function addTask(title) {
+    const task = { title };
+
+    //FIXME: is this OK? Should we allow to add task to any column?
+    dashboard.columns[0].tasks.push(task);
+
+    await updateDashboard();
   }
 
-  return { todoTasks, doneTasks, addTask, getTaskByColumn };
+  async function updateDashboard() {
+    const { error } = await supabase
+      .from("boards")
+      .update({ columns: dashboard.columns })
+      .eq("name", "Learning List");
+    if (error) throw error;
+  }
+
+  return {
+    loadDashboard,
+    dashboard,
+    addTask,
+    updateDashboard,
+  };
 });

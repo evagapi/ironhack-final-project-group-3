@@ -1,10 +1,11 @@
 <template>
+  <MainNavbar />
   <n-message-provider>
-    <TheHome />
+    <router-view />
   </n-message-provider>
 </template>
 
 <script setup>
+import MainNavbar from "./components/MainNavbar.vue";
 import { NMessageProvider } from "naive-ui";
-import TheHome from "./components/TheHome.vue";
 </script>

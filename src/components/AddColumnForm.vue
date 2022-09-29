@@ -1,52 +1,43 @@
 <template>
-  <div class="form-wrapper bg-slate-400">
+  <div class="form-wrapper">
     <NForm
       ref="formRef"
       inline
       :label-width="80"
       :model="formValue"
       :rules="rules"
-      size="small"
+      size="large"
       @submit="handleSubmit"
     >
-      <n-form-item path="task">
-        <n-input v-model:value="formValue.task" placeholder="Task" />
+      <n-form-item path="column">
+        <n-input v-model:value="formValue.column" placeholder="Column" />
       </n-form-item>
       <n-form-item>
-        <n-button class="bg-white text-black" attr-type="submit">
-          Add
-        </n-button>
+        <n-button attr-type="submit"> Add </n-button>
       </n-form-item>
     </NForm>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref, defineProps } from "vue";
+import { reactive, ref } from "vue";
 import { NForm, NFormItem, NInput, NButton, useMessage } from "naive-ui";
 
 import { useTasksStore } from "../stores/TasksStore";
 
-const { addTask } = useTasksStore();
+const { addColumn } = useTasksStore();
 
 const message = useMessage();
 const formValue = reactive({
-  task: "",
-});
-
-const props = defineProps({
-  index: {
-    type: Number,
-    required: true,
-  },
+  column: "",
 });
 
 const formRef = ref(null);
 
 const rules = {
-  task: {
+  column: {
     required: true,
-    message: "Please enter your task",
+    message: "Please enter your column",
     trigger: ["input"],
   },
 };
@@ -56,20 +47,20 @@ function handleSubmit(e) {
   formRef.value
     ?.validate()
     .then(() => {
-      addTask(props.index, formValue.task);
-      formValue.task = "";
-      message.success("New task added");
+      addColumn(formValue.column);
+      formValue.column = "";
+      message.success("New column added");
     })
     .catch((errors) => {
       console.log(errors);
-      message.error("A task must not be empty");
+      message.error("A column must not be empty");
     });
 }
 </script>
 
 <style scoped>
 .form-wrapper {
-  padding: 0 1rem;
+  padding: 1rem;
   margin: auto;
 }
 </style>

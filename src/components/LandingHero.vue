@@ -39,7 +39,7 @@
         <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
           <div class="container mx-auto flex flex-col items-center">
             <form
-              class="my-12 shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg"
+              class="my-12 shadow-lg w-80 p-4 flex flex-col bg-slate-100 rounded-lg"
             >
               <h2
                 class="font-medium leading-tight text-2xl mt-0 mb-2 text-grey-600 mt-2 mb-4 p-3"

@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div><LandingHero></LandingHero></div>
 </template>
 
-<script setup></script>
+<script setup>
+import LandingHero from "./LandingHero.vue";
+</script>

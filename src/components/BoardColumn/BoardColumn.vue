@@ -1,6 +1,6 @@
 <template>
   <ColumnHeader :index="index" :column="column" />
-  <TaskList :column="column" />
+  <TaskList :index="index" :column="column" />
   <AddTaskForm :index="index" />
 </template>
 

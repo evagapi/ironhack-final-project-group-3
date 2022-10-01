@@ -17,11 +17,10 @@ export const useTasksStore = defineStore("tasks", () => {
     Object.assign(dashboard, data);
   }
 
-  async function addTask(title) {
+  async function addTask(columnIndex, title) {
     const task = { title };
 
-    //FIXME: is this OK? Should we allow to add task to any column?
-    dashboard.columns[0].tasks.push(task);
+    dashboard.columns[columnIndex].tasks.push(task);
 
     await updateDashboard();
   }
@@ -34,10 +33,39 @@ export const useTasksStore = defineStore("tasks", () => {
     if (error) throw error;
   }
 
+  async function addColumn(columnName) {
+    const column = { name: columnName, tasks: [] };
+
+    dashboard.columns.push(column);
+
+    await updateDashboard();
+  }
+
+  async function moveColumnToLeft(index) {
+    let columnsArray = dashboard.columns;
+    let aux = columnsArray[index - 1];
+    columnsArray[index - 1] = columnsArray[index];
+    columnsArray[index] = aux;
+
+    await updateDashboard();
+  }
+
+  async function moveColumnToRight(index) {
+    let columnsArray = dashboard.columns;
+    let aux = columnsArray[index + 1];
+    columnsArray[index + 1] = columnsArray[index];
+    columnsArray[index] = aux;
+
+    await updateDashboard();
+  }
+
   return {
     loadDashboard,
     dashboard,
     addTask,
+    addColumn,
     updateDashboard,
+    moveColumnToLeft,
+    moveColumnToRight,
   };
 });

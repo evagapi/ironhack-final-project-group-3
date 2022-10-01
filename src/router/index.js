@@ -11,6 +11,11 @@ const routes = [
     name: "dashboard",
     component: () => import("../components/TodoList.vue"),
   },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("../components/LoginRegister.vue"),
+  },
 ];
 
 const router = createRouter({

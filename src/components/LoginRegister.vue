@@ -1,8 +1,4 @@
 <template>
-  <div>
-    <MainNavbar></MainNavbar>
-  </div>
-
   <section
     class="bg-gray-50 dark:bg-gray-900 flex min-h-full min-w-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8 flex-row"
   >
@@ -194,14 +190,6 @@
   </section>
 </template>
 
-<script>
-import MainNavbar from "./MainNavbar.vue";
-
-export default {
-  components: {
-    MainNavbar,
-  },
-};
-</script>
+<script></script>
 
 <style scoped></style>

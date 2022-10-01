@@ -25,7 +25,7 @@
 import { reactive, ref, defineProps } from "vue";
 import { NForm, NFormItem, NInput, NButton, useMessage } from "naive-ui";
 
-import { useTasksStore } from "../stores/TasksStore";
+import { useTasksStore } from "../../stores/TasksStore";
 
 const { addTask } = useTasksStore();
 

@@ -59,6 +59,21 @@ export const useTasksStore = defineStore("tasks", () => {
     await updateDashboard();
   }
 
+  async function removeTask(columnIndex, taskIndex) {
+    dashboard.columns[columnIndex].tasks.splice(taskIndex, 1);
+    await updateDashboard();
+  }
+
+  async function editTask(columnIndex, taskIndex, title) {
+    dashboard.columns[columnIndex].tasks[taskIndex].title = title;
+    await updateDashboard();
+  }
+
+  async function removeColumn(columnIndex) {
+    dashboard.columns.splice(columnIndex, 1);
+    await updateDashboard();
+  }
+
   return {
     loadDashboard,
     dashboard,
@@ -67,5 +82,8 @@ export const useTasksStore = defineStore("tasks", () => {
     updateDashboard,
     moveColumnToLeft,
     moveColumnToRight,
+    editTask,
+    removeTask,
+    removeColumn,
   };
 });

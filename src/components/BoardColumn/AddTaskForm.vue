@@ -17,6 +17,15 @@
           Add
         </n-button>
       </n-form-item>
+      <n-form-item>
+        <n-button
+          class="bg-red-100"
+          type="error"
+          title="Delete column"
+          @click="removeColumn(index)"
+          >🔥</n-button
+        >
+      </n-form-item>
     </NForm>
   </div>
 </template>
@@ -27,7 +36,7 @@ import { NForm, NFormItem, NInput, NButton, useMessage } from "naive-ui";
 
 import { useTasksStore } from "../../stores/TasksStore";
 
-const { addTask } = useTasksStore();
+const { addTask, removeColumn } = useTasksStore();
 
 const message = useMessage();
 const formValue = reactive({

@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import LandingHero from "./LandingHero.vue";
+import LandingHero from "../components/LandingHero.vue";
 </script>

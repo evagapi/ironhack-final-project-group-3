@@ -64,6 +64,11 @@ export const useTasksStore = defineStore("tasks", () => {
     await updateDashboard();
   }
 
+  async function editTask(columnIndex, taskIndex, title) {
+    dashboard.columns[columnIndex].tasks[taskIndex].title = title;
+    await updateDashboard();
+  }
+
   async function removeColumn(columnIndex) {
     dashboard.columns.splice(columnIndex, 1);
     await updateDashboard();
@@ -77,6 +82,7 @@ export const useTasksStore = defineStore("tasks", () => {
     updateDashboard,
     moveColumnToLeft,
     moveColumnToRight,
+    editTask,
     removeTask,
     removeColumn,
   };

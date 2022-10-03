@@ -31,51 +31,56 @@
       <h2 class="text-4xl font-semibold">Meet the team</h2>
     </div>
     <div class="flex flex-wrap justify-center">
-      <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+      <div
+        v-for="item in team"
+        :key="item.id"
+        class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4"
+      >
         <img
-          alt="Eva Picture"
-          src="https://scr.wfcdn.de/21565/Imgur-Memes-des-Jahrzehnts-1579171161-0-11.jpg"
+          :alt="item.name"
+          :src="item.picture"
           class="shadow-lg rounded-full max-w-full mx-auto hover:scale-110"
           style="max-width: 120px"
         />
         <div class="pt-6 text-center">
-          <h5 class="text-xl font-bold">Eva Garcia</h5>
+          <h5 class="text-xl font-bold">{{ item.name }}</h5>
           <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-            Does stuff
-          </p>
-        </div>
-      </div>
-      <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-        <img
-          alt="Hyunji picture"
-          src="https://scr.wfcdn.de/21565/Imgur-Memes-des-Jahrzehnts-1579171161-0-11.jpg"
-          class="shadow-lg rounded-full max-w-full mx-auto hover:scale-110"
-          style="max-width: 120px"
-        />
-        <div class="pt-6 text-center">
-          <h5 class="text-xl font-bold">Hyunji Yang</h5>
-          <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-            Does stuff
-          </p>
-        </div>
-      </div>
-      <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-        <img
-          alt="Alejo Picture"
-          src="https://i.pinimg.com/originals/af/55/09/af550933086c43868d53f01b745605dd.jpg"
-          class="shadow-lg rounded-full max-w-full mx-auto hover:scale-110"
-          style="max-width: 120px"
-        />
-        <div class="pt-6 text-center">
-          <h5 class="text-xl font-bold">Alejo Cereto</h5>
-          <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-            Does stuff
+            {{ item.title }}
           </p>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      team: [
+        {
+          name: "Eva Garcia",
+          title: "Does stuff",
+          picture:
+            "https://scr.wfcdn.de/21565/Imgur-Memes-des-Jahrzehnts-1579171161-0-11.jpg",
+        },
+        {
+          name: "Hyunji Yang",
+          title: "Does stuff",
+          picture:
+            "https://scr.wfcdn.de/21565/Imgur-Memes-des-Jahrzehnts-1579171161-0-11.jpg",
+        },
+        {
+          name: "Alejo Cereto",
+          title: "Does stuff!",
+          picture:
+            "https://i.pinimg.com/originals/af/55/09/af550933086c43868d53f01b745605dd.jpg",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=Raleway);

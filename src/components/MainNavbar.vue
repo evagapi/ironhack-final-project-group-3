@@ -32,10 +32,11 @@
         </li>
         <li>
           <n-button
-            type="error"
+            type="button"
             class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600"
+            @click="signOutAction"
           >
-            <router-link to="/"> Log out </router-link></n-button
+            Log out</n-button
           >
         </li>
       </ul>
@@ -46,6 +47,7 @@
 <script>
 import { NButton, NSwitch, NSpace } from "naive-ui";
 export let isLightMode;
+import { store } from "../store";
 
 export default {
   name: "MainNavbar",
@@ -57,7 +59,16 @@ export default {
     NSwitch,
     NSpace,
   },
+  setup() {
+    const signOut = () => {
+      // dispatch the sign out action to log user out
+      store.dispatch("signOutAction");
+    };
 
+    return {
+      signOut,
+    };
+  },
   data() {
     return {
       active: "",
@@ -69,6 +80,10 @@ export default {
         },
       },
     };
+  },
+
+  async created() {
+    this.signOut();
   },
 };
 </script>

@@ -12,9 +12,24 @@ const routes = [
     component: () => import("../components/TodoList.vue"),
   },
   {
+    path: "/register",
+    name: "register",
+    component: () => import("../components/RegisterPage.vue"),
+  },
+  {
     path: "/login",
     name: "login",
-    component: () => import("../components/LoginRegister.vue"),
+    component: () => import("../components/LoginPage.vue"),
+  },
+  {
+    path: "/auth",
+    name: "auth",
+    component: () => import("../components/AuthPage.vue"),
+  },
+  {
+    path: "/app",
+    name: "app",
+    component: () => import("../AppPage.vue"),
   },
 ];
 

@@ -1,3 +1,4 @@
+<!-- eslint-disable max-lines -->
 <template>
   <div
     class="relative pt-16 pb-32 flex content-center items-center justify-center"
@@ -47,7 +48,7 @@
                 Start doing more now
               </h2>
 
-              <router-link to="/login">
+              <router-link to="/app">
                 <button
                   type="button"
                   class="w-full content-center justify-center text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
@@ -59,7 +60,7 @@
               <a class="text-blue-400 text-center my-2">Forgot Pasword?</a>
               <hr />
 
-              <router-link to="/login">
+              <router-link to="/app">
                 <button
                   class="w-full mt-5 content-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 >

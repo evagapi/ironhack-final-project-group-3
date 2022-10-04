@@ -19,7 +19,7 @@
         <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
           <div class="justify-items-center content-center p-10">
             <h1
-              class="text-white font-semibold font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-gray-50 to-gray-300 pb-5"
+              class="text-white font-semibold font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-gray-50 to-gray-300 pb-5"
             >
               Doitfy
             </h1>
@@ -50,7 +50,7 @@
               <router-link to="/login">
                 <button
                   type="button"
-                  class="w-full content-center justify-center text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                  class="w-full content-center justify-center text-white bg-gradient-to-br from-indigo-800 to-indigo-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-indigo-200 dark:focus:ring-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 >
                   ✉️ Continue with Email login
                 </button>
@@ -61,7 +61,7 @@
 
               <router-link to="/login">
                 <button
-                  class="w-full mt-5 content-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                  class="w-full mt-5 content-center justify-center text-white bg-gradient-to-br from-rose-800 to-rose-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-rose-200 dark:focus:ring-rose-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 >
                   Create New Account
                 </button>

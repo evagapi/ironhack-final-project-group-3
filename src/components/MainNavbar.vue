@@ -25,7 +25,7 @@
         </li>
         <li>
           <n-button
-            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"
+            class="justify-center text-white bg-gradient-to-br from-indigo-800 to-indigo-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-indigo-200 dark:focus:ring-indigo-800"
           >
             <router-link to="/"> Home </router-link></n-button
           >
@@ -33,7 +33,7 @@
         <li>
           <n-button
             type="button"
-            class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600"
+            class="content-center justify-center text-white bg-gradient-to-br from-rose-800 to-rose-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-rose-200 dark:focus:ring-rose-800 font-medium rounded-lg"
             @click="signOutAction"
           >
             Log out</n-button
@@ -47,7 +47,7 @@
 <script>
 import { NButton, NSwitch, NSpace } from "naive-ui";
 export let isLightMode;
-import { store } from "../store";
+import { store } from "../stores/UserStore.js";
 
 export default {
   name: "MainNavbar",
@@ -127,13 +127,13 @@ a {
 }
 
 a:hover {
-  color: #eea849;
+  color: #495aee;
   font-weight: bold;
   transition: all 0.5s;
 }
 
 a:active {
-  color: #eea849;
+  color: #4954ee;
 }
 
 nav {
@@ -144,16 +144,16 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #f0a000;
-  background: linear-gradient(to left, #1190cb, #7dccff);
+  background: #1f2937;
   color: #fff;
   height: 55px;
-  padding: 1em;
+  padding: 2em;
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 10;
   box-shadow: 1px 1px 1px 1px #ddd;
+  position: fixed;
 }
 
 .dark-mode {
@@ -161,12 +161,16 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #f0a000;
-  background: linear-gradient(to left, black, #08415b);
+  background: linear-gradient(to left, black, #06293a);
   color: #fff;
   height: 55px;
-  padding: 1em;
+  padding: 2em;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   box-shadow: 1px 1px 1px 1px #ddd;
+  position: fixed;
 }
 
 .menu {

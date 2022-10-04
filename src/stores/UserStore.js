@@ -1,6 +1,6 @@
 import { reactive } from "vue";
-import router from "./router";
-import { supabase } from "./supabase";
+import router from "../router/index.js";
+import { supabase } from "../supabase";
 
 export const store = {
   state: reactive({

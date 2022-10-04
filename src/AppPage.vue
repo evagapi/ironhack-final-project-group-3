@@ -9,7 +9,7 @@
 import AuthPage from "./components/AuthPage.vue";
 import TodoList from "./components/TodoList.vue";
 
-import { store } from "./store";
+import { store } from "./stores/UserStore";
 import { supabase } from "./supabase";
 
 export default {

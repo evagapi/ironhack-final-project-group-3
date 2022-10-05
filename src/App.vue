@@ -5,9 +5,13 @@
       <router-view />
     </n-message-provider>
   </n-loading-bar-provider>
+  <MainFooter />
 </template>
 
 <script setup>
-import MainNavbar from "./components/MainNavbar.vue";
 import { NMessageProvider, NLoadingBarProvider } from "naive-ui";
+
+import MainNavbar from "./components/MainNavbar.vue";
+import MainFooter from "./components/MainFooter.vue";
+
 </script>

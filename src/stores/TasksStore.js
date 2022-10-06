@@ -13,7 +13,6 @@ export const useTasksStore = defineStore("tasks", () => {
       .eq("name", "Learning List") //FIXME: Un-hardcode this once we can create several boards / have users
       .single();
     if (error) throw error;
-
     Object.assign(dashboard, data);
   }
 

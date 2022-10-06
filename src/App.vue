@@ -13,5 +13,4 @@ import { NMessageProvider, NLoadingBarProvider } from "naive-ui";
 
 import MainNavbar from "./components/MainNavbar.vue";
 import MainFooter from "./components/MainFooter.vue";
-
 </script>

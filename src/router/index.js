@@ -14,7 +14,7 @@ const routes = [
   {
     path: "/register",
     name: "register",
-    component: () => import("../components/RegisterPage.vue"),
+    component: () => import("../components/SingUp.vue"),
   },
   {
     path: "/login",

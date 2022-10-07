@@ -3,14 +3,18 @@ import { reactive } from "vue";
 
 import { supabase } from "../supabase";
 
+import { useUserStore } from "./UserStore";
+
 export const useTasksStore = defineStore("tasks", () => {
+  let { auth } = useUserStore();
+
   let dashboard = reactive({});
 
   async function loadDashboard() {
     const { data, error } = await supabase
       .from("boards")
       .select("*")
-      .eq("name", "Learning List") //FIXME: Un-hardcode this once we can create several boards / have users
+      .eq("uuid", auth.user.id)
       .single();
     if (error) throw error;
     Object.assign(dashboard, data);
@@ -28,7 +32,7 @@ export const useTasksStore = defineStore("tasks", () => {
     const { error } = await supabase
       .from("boards")
       .update({ columns: dashboard.columns })
-      .eq("name", "Learning List");
+      .eq("uuid", auth.user.id);
     if (error) throw error;
   }
 

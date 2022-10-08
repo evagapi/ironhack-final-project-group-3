@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { supabase } from "../supabase";
 
 const routes = [
   {
@@ -14,22 +15,12 @@ const routes = [
   {
     path: "/register",
     name: "register",
-    component: () => import("../components/RegisterPage.vue"),
+    component: () => import("../pages/SignUp.vue"),
   },
   {
     path: "/login",
     name: "login",
-    component: () => import("../components/LoginPage.vue"),
-  },
-  {
-    path: "/auth",
-    name: "auth",
-    component: () => import("../components/AuthPage.vue"),
-  },
-  {
-    path: "/app",
-    name: "app",
-    component: () => import("../AppPage.vue"),
+    component: () => import("../pages/SignIn.vue"),
   },
 ];
 
@@ -39,6 +30,13 @@ const router = createRouter({
   scrollBehavior() {
     document.getElementById("app").scrollIntoView();
   },
+});
+
+router.beforeEach(async (to) => {
+  const user = supabase.auth.user();
+  if (!user && to.name === "dashboard") {
+    return { name: "login" };
+  }
 });
 
 export default router;

@@ -86,7 +86,7 @@ import { useUserStore } from "../stores/UserStore";
 
 import router from "../router";
 
-const { singUp } = useUserStore();
+const { signUp } = useUserStore();
 
 const message = useMessage();
 const formValue = reactive({});
@@ -126,7 +126,7 @@ function handleSubmit(e) {
   formRef.value
     ?.validate()
     .then(() => {
-      singUp(formValue.email, formValue.password);
+      signUp(formValue.email, formValue.password);
       router.push({ name: "login" });
       message.success(
         "All done! Check your inbox to validate your account and enter your credentials"

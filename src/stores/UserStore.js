@@ -16,7 +16,7 @@ export const useUserStore = defineStore("user", () => {
     }
   });
 
-  async function singUp(email, password) {
+  async function signUp(email, password) {
     const { error } = await supabase.auth.signUp({
       email: email,
       password: password,
@@ -37,5 +37,5 @@ export const useUserStore = defineStore("user", () => {
     if (error) throw error;
   }
 
-  return { singUp, signIn, signOut, auth };
+  return { signUp, signIn, signOut, auth };
 });

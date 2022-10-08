@@ -12,13 +12,7 @@
     </div>
     <ul class="menu">
       <li>
-        <n-button
-          v-if="auth.user"
-          type="warning"
-          strong
-          secondary
-          @click="logOut"
-        >
+        <n-button v-if="auth.user" strong color="#aa2222" @click="logOut">
           Log out</n-button
         >
       </li>

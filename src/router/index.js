@@ -22,6 +22,12 @@ const routes = [
     name: "login",
     component: () => import("../pages/SignIn.vue"),
   },
+  {
+    path: "/404",
+    alias: "/:pathMatch(.*)*",
+    name: "notFound",
+    component: () => import("../pages/NotFound.vue"),
+  },
 ];
 
 const router = createRouter({

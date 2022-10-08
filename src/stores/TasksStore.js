@@ -6,6 +6,8 @@ import { supabase } from "../supabase";
 export const useTasksStore = defineStore("tasks", () => {
   let dashboard = reactive({});
 
+  const MAX_COLUMNS = 15;
+
   async function loadDashboard() {
     const { data, error } = await supabase
       .from("boards")
@@ -36,7 +38,6 @@ export const useTasksStore = defineStore("tasks", () => {
     const column = { name: columnName, tasks: [] };
 
     dashboard.columns.push(column);
-
     await updateDashboard();
   }
 
@@ -76,6 +77,7 @@ export const useTasksStore = defineStore("tasks", () => {
   return {
     loadDashboard,
     dashboard,
+    MAX_COLUMNS,
     addTask,
     addColumn,
     updateDashboard,

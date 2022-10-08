@@ -45,7 +45,7 @@ import { useTasksStore } from "../stores/TasksStore";
 
 const showModal = ref(false);
 
-const { addColumn } = useTasksStore();
+const { dashboard, MAX_COLUMNS, addColumn } = useTasksStore();
 
 const message = useMessage();
 const formValue = reactive({
@@ -67,10 +67,16 @@ function handleSubmit(e) {
   formRef.value
     ?.validate()
     .then(() => {
-      addColumn(formValue.column);
-      formValue.column = "";
-      message.success("New column added");
-      showModal.value = false;
+      if (dashboard.columns.length < MAX_COLUMNS) {
+        addColumn(formValue.column);
+        formValue.column = "";
+        message.success("New column added");
+        showModal.value = false;
+      } else {
+        formValue.column = "";
+        message.error("Maximum of columns reached");
+        showModal.value = false;
+      }
     })
     .catch((errors) => {
       console.log(errors);

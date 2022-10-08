@@ -7,13 +7,18 @@
       :model="formValue"
       :rules="rules"
       size="small"
+      class=""
       @submit="handleSubmit"
     >
       <n-form-item path="task">
         <n-input v-model:value="formValue.task" placeholder="Task" />
       </n-form-item>
       <n-form-item>
-        <n-button class="bg-white text-black" attr-type="submit">
+        <n-button
+          :disabled="!isValid"
+          class="bg-white text-black"
+          attr-type="submit"
+        >
           Add
         </n-button>
       </n-form-item>
@@ -43,6 +48,8 @@ const formValue = reactive({
   task: "",
 });
 
+const isValid = ref(false);
+
 const props = defineProps({
   index: {
     type: Number,
@@ -55,7 +62,14 @@ const formRef = ref(null);
 const rules = {
   task: {
     required: true,
-    message: "Please enter your task",
+    validator(rule, value) {
+      if (!value || value.length <= 3) {
+        isValid.value = false;
+        return new Error("A task must have more than 3 letters.");
+      }
+      isValid.value = true;
+      return true;
+    },
     trigger: ["input"],
   },
 };

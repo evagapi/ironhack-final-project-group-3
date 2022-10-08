@@ -16,6 +16,7 @@
       <n-form-item path="email" label="Enter your email">
         <n-input
           v-model:value="formValue.email"
+          :input-props="{ autocomplete: 'username' }"
           placeholder="example@example.com"
         />
       </n-form-item>
@@ -24,19 +25,31 @@
         <n-input
           v-model:value="formValue.password"
           type="password"
+          :input-props="{ autocomplete: 'new-password' }"
           placeholder="Password"
         />
       </n-form-item>
 
-      <n-checkbox value="terms-and-conditions" class="mr-2">
-        I accept the
-        <a
-          class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          >Terms and Conditions</a
-        >
-        <span class="text-red-700">&nbsp;*</span>
-      </n-checkbox>
+      <n-form-item path="confirmation" label="Confirm your password">
+        <n-input
+          v-model:value="formValue.confirmation"
+          type="password"
+          :input-props="{ autocomplete: 'new-password' }"
+          placeholder="Repeat your password"
+        />
+      </n-form-item>
+
+      <n-form-item path="terms" :show-label="false">
+        <n-checkbox v-model:checked="formValue.terms" class="mr-2">
+          I accept the
+          <a
+            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            >Terms and Conditions</a
+          >
+          <span class="text-red-700">&nbsp;*</span>
+        </n-checkbox>
+      </n-form-item>
 
       <ButtonOrButton>
         <template #first>
@@ -86,6 +99,8 @@ import { useUserStore } from "../stores/UserStore";
 
 import router from "../router";
 
+import { email, password } from "../helpers/form-rules";
+
 const { signUp } = useUserStore();
 
 const message = useMessage();
@@ -93,31 +108,27 @@ const formValue = reactive({});
 const formRef = ref(null);
 
 const rules = {
-  email: {
+  email,
+  password,
+  confirmation: {
     required: true,
     validator(rule, value) {
-      if (!value || !value.includes("@")) {
-        return new Error("Please enter a valid email");
+      if (formValue.password !== value) {
+        return new Error("Password not matching");
       }
 
       return true;
     },
-    trigger: ["input"],
+    trigger: ["blur"],
   },
-  password: {
-    required: true,
+  terms: {
     validator(rule, value) {
-      if (!value || value.length < 6) {
-        return new Error("Password should be at least 6 characters");
+      if (!value) {
+        return new Error("Please accept the Terms and Conditions");
       }
 
       return true;
     },
-    trigger: ["input"],
-  },
-  "terms-and-conditions": {
-    required: true,
-    trigger: ["input"],
   },
 };
 

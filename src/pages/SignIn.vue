@@ -16,6 +16,7 @@
       <n-form-item path="email" label="Enter your email">
         <n-input
           v-model:value="formValue.email"
+          :input-props="{ autocomplete: 'username' }"
           placeholder="example@example.com"
         />
       </n-form-item>
@@ -24,6 +25,7 @@
         <n-input
           v-model:value="formValue.password"
           type="password"
+          :input-props="{ autocomplete: 'current-password' }"
           placeholder="Password"
         />
       </n-form-item>
@@ -67,6 +69,8 @@ import ButtonOrButton from "../components/ButtonOrButton.vue";
 import { useUserStore } from "../stores/UserStore";
 import router from "../router";
 
+import { email, password } from "../helpers/form-rules";
+
 const { signIn } = useUserStore();
 
 const message = useMessage();
@@ -74,28 +78,8 @@ const formValue = reactive({});
 const formRef = ref(null);
 
 const rules = {
-  email: {
-    required: true,
-    validator(rule, value) {
-      if (!value || !value.includes("@")) {
-        return new Error("Please enter a valid email");
-      }
-
-      return true;
-    },
-    trigger: ["input"],
-  },
-  password: {
-    required: true,
-    validator(rule, value) {
-      if (!value || value.length < 6) {
-        return new Error("Password should be at least 6 characters");
-      }
-
-      return true;
-    },
-    trigger: ["input"],
-  },
+  email,
+  password,
 };
 
 function handleSubmit(e) {

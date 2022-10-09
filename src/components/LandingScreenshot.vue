@@ -17,15 +17,15 @@
           </div>
         </div>
 
-        <div class="w-full md:w-6/12 mr-auto px-10 pt-24 md:pt-0 mr-0">
+        <div class="w-full md:w-6/12 px-10 pt-24 md:pt-0 mr-0">
           <img
             alt="..."
             class="max-w-full rounded-lg shadow-xl"
             style="
-              transform: scale(1.2) perspective(1040px) rotateY(-11deg)
-                rotateX(2deg) rotate(2deg);
+              transform: perspective(1040px) rotateY(-11deg) rotateX(2deg)
+                rotate(2deg);
             "
-            src="https://i.postimg.cc/7LMBD016/Doitfy.png"
+            src="https://i.postimg.cc/TPhbqcDm/doitfy-dashboard-screenshot.jpg"
           />
         </div>
       </div>

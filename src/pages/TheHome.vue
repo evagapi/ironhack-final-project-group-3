@@ -2,12 +2,14 @@
   <LandingHero />
   <LandingFeatures />
   <LandingScreenshot />
+  <GetStarted />
   <AboutUs />
 </template>
 
 <script setup>
-import LandingHero from "../components/LandingHero.vue";
-import LandingFeatures from "../components/LandingFeatures.vue";
-import LandingScreenshot from "../components/LandingScreenshot.vue";
-import AboutUs from "../components/AboutUs.vue";
+import LandingHero from "../components/Landing/LandingHero.vue";
+import LandingFeatures from "../components/Landing/LandingFeatures.vue";
+import LandingScreenshot from "../components/Landing/LandingScreenshot.vue";
+import GetStarted from "../components/Landing/GetStarted.vue";
+import AboutUs from "../components/Landing/AboutUs.vue";
 </script>

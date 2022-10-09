@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { useUserStore } from "../stores/UserStore";
+import { useUserStore } from "../../stores/UserStore";
 import { NButton } from "naive-ui";
 
 const { auth } = useUserStore();

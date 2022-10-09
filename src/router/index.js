@@ -23,6 +23,16 @@ const routes = [
     component: () => import("../pages/SignIn.vue"),
   },
   {
+    path: "/auth/forgot-password",
+    name: "forgot-password",
+    component: () => import("../pages/PasswordRecovery.vue"),
+  },
+  {
+    path: "/auth/change-password",
+    name: "change-password",
+    component: () => import("../pages/ChangePassword.vue"),
+  },
+  {
     path: "/404",
     alias: "/:pathMatch(.*)*",
     name: "notFound",

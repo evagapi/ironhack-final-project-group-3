@@ -3,9 +3,14 @@
     <h1
       class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-700"
     >
-      Log in
+      Password recovery
     </h1>
+    <n-alert v-if="isSubmitted" title="Check your inbox" type="success">
+      You should have an email with a link to reset your password. You can close
+      this page.
+    </n-alert>
     <n-form
+      v-else
       ref="formRef"
       :model="formValue"
       :rules="rules"
@@ -21,15 +26,6 @@
         />
       </n-form-item>
 
-      <n-form-item path="password" label="Enter your password">
-        <n-input
-          v-model:value="formValue.password"
-          type="password"
-          :input-props="{ autocomplete: 'current-password' }"
-          placeholder="Password"
-        />
-      </n-form-item>
-
       <ButtonOrButton>
         <template #first>
           <n-button
@@ -39,53 +35,56 @@
             secondary
             attr-type="submit"
           >
-            Login
+            Reset password
           </n-button>
         </template>
         <template #second>
-          <router-link to="/register">
+          <router-link to="/login">
             <n-button
               strong
               secondary
               type="primary"
               class="flex w-full rounded-md text-sm font-medium"
             >
-              Create a new account?
+              Login
             </n-button>
           </router-link>
         </template>
       </ButtonOrButton>
     </n-form>
-    <router-link
-      :to="{ name: 'forgot-password' }"
-      class="text-blue-700 text-center my-4 block hover:text-blue-400 hover:underline"
-      >Did you forget your password?</router-link
-    >
-    <hr />
   </AuthWrapper>
 </template>
 
 <script setup>
 import { reactive, ref } from "vue";
-import { NForm, NFormItem, NInput, NButton, useMessage } from "naive-ui";
+import {
+  NAlert,
+  NForm,
+  NFormItem,
+  NInput,
+  NButton,
+  useMessage,
+  useLoadingBar,
+} from "naive-ui";
 
 import AuthWrapper from "../components/AuthWrapper.vue";
 import ButtonOrButton from "../components/ButtonOrButton.vue";
 
 import { useUserStore } from "../stores/UserStore";
-import router from "../router";
 
-import { email, password } from "../helpers/form-rules";
+import { email } from "../helpers/form-rules";
 
-const { signIn } = useUserStore();
+const { resetPassword } = useUserStore();
 
+const loadingBar = useLoadingBar();
 const message = useMessage();
 const formValue = reactive({});
 const formRef = ref(null);
 
+const isSubmitted = ref(false);
+
 const rules = {
   email,
-  password,
 };
 
 function handleSubmit(e) {
@@ -93,12 +92,14 @@ function handleSubmit(e) {
   formRef.value
     ?.validate()
     .then(async () => {
-      await signIn(formValue.email, formValue.password);
-      router.push({ name: "dashboard" });
+      loadingBar.start();
+      await resetPassword(formValue.email);
+      isSubmitted.value = true;
+      loadingBar.finish();
     })
     .catch((error) => {
       console.log(error);
-      message.error("Please enter your email and a password");
+      message.error("Please enter your email");
     });
 }
 </script>

@@ -45,6 +45,7 @@
           <a
             class="font-medium text-primary-600 hover:underline dark:text-primary-500"
             href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            target="_blank"
             >Terms and Conditions</a
           >
           <span class="text-red-700">&nbsp;*</span>

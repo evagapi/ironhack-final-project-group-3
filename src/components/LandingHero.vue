@@ -20,7 +20,7 @@
         <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
           <div class="justify-items-center content-center p-10">
             <h1
-              class="text-white font-semibold font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-gray-50 to-gray-300 pb-5"
+              class="text-white font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-gray-50 to-gray-300 pb-5"
             >
               Doitfy
             </h1>
@@ -39,39 +39,7 @@
 
         <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
           <div class="container mx-auto flex flex-col items-center">
-            <form
-              class="my-12 shadow-lg w-80 p-4 flex flex-col bg-slate-100 rounded-lg"
-            >
-              <h2
-                class="font-medium leading-tight text-2xl mt-0 mb-2 text-grey-600 mt-2 mb-4 p-3"
-              >
-                Start doing more now
-              </h2>
-
-              <router-link to="/login">
-                <button
-                  type="button"
-                  class="w-full content-center justify-center text-white bg-gradient-to-br from-indigo-800 to-indigo-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-indigo-200 dark:focus:ring-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                >
-                  ✉️ Continue with Email login
-                </button>
-              </router-link>
-
-              <router-link
-                :to="{ name: 'forgot-password' }"
-                class="text-blue-400 text-center my-2"
-                >Forgot Pasword?</router-link
-              >
-              <hr />
-
-              <router-link to="/register">
-                <button
-                  class="w-full mt-5 content-center justify-center text-white bg-gradient-to-br from-rose-800 to-rose-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-rose-200 dark:focus:ring-rose-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                >
-                  Create New Account
-                </button>
-              </router-link>
-            </form>
+            <AuthCard />
           </div>
         </div>
       </div>
@@ -99,8 +67,10 @@
 </template>
 
 <script>
+import AuthCard from "./AuthCard.vue";
 export default {
   name: "LandingHero",
+  components: { AuthCard },
   props: {},
   data: () => {
     return {
@@ -120,7 +90,6 @@ export default {
       charIndex: 0,
     };
   },
-
   created() {
     setTimeout(this.typeText, this.newTextDelay + 200);
   },

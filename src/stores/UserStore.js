@@ -11,7 +11,6 @@ export const useUserStore = defineStore("user", () => {
   auth.user = supabase.auth.user();
 
   supabase.auth.onAuthStateChange(async (event, session) => {
-    console.log(event);
     if (event === "SIGNED_OUT") {
       auth.user = null;
     } else if (event == "PASSWORD_RECOVERY") {

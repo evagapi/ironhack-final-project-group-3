@@ -1,8 +1,8 @@
 <template>
-  <div><LandingHero></LandingHero></div>
-  <div><LandingFeatures></LandingFeatures></div>
-  <div><LandingScreenshot></LandingScreenshot></div>
-  <div><AboutUs></AboutUs></div>
+  <LandingHero />
+  <LandingFeatures />
+  <LandingScreenshot />
+  <AboutUs />
 </template>
 
 <script setup>

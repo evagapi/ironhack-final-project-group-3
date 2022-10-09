@@ -56,6 +56,12 @@
         </template>
       </ButtonOrButton>
     </n-form>
+    <router-link
+      :to="{ name: 'forgot-password' }"
+      class="text-blue-700 text-center my-4 block hover:text-blue-400 hover:underline"
+      >Did you forget your password?</router-link
+    >
+    <hr />
   </AuthWrapper>
 </template>
 

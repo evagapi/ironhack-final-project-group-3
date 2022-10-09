@@ -17,7 +17,7 @@
           </div>
         </div>
 
-        <div class="w-full md:w-6/12 px-10 pt-24 md:pt-0 mr-0">
+        <div class="w-full md:w-6/12 px-10 py-24 md:pt-0 mr-0">
           <img
             alt="..."
             class="max-w-full rounded-lg shadow-xl"
@@ -25,7 +25,7 @@
               transform: perspective(1040px) rotateY(-11deg) rotateX(2deg)
                 rotate(2deg);
             "
-            src="https://i.postimg.cc/TPhbqcDm/doitfy-dashboard-screenshot.jpg"
+            src="/images/doitfy-dashboard-screenshot.jpg"
           />
         </div>
       </div>

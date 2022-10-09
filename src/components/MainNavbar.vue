@@ -1,6 +1,6 @@
 <template>
   <nav class="top-nav">
-    <div id="main-logo">
+    <router-link to="/" class="main-logo">
       <img
         id="logoD"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Drake_Bulldogs_%22D%22_logo.svg/1113px-Drake_Bulldogs_%22D%22_logo.svg.png"
@@ -9,7 +9,8 @@
         height="25"
       />
       <div id="logo">Doitfy</div>
-    </div>
+    </router-link>
+
     <ul class="menu">
       <li>
         <n-button v-if="auth.user" strong color="#aa2222" @click="logOut">
@@ -35,7 +36,7 @@ const logOut = async () => {
 </script>
 
 <style scoped>
-#main-logo {
+.main-logo {
   display: flex;
   flex-direction: row;
 }

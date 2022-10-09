@@ -57,7 +57,11 @@
                 </button>
               </router-link>
 
-              <a class="text-blue-400 text-center my-2">Forgot Pasword?</a>
+              <router-link
+                :to="{ name: 'forgot-password' }"
+                class="text-blue-400 text-center my-2"
+                >Forgot Pasword?</router-link
+              >
               <hr />
 
               <router-link to="/register">

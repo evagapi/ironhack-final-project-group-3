@@ -55,10 +55,9 @@
       <ButtonOrButton>
         <template #first>
           <n-button
-            class="flex w-full rounded-md text-sm font-medium mt-5"
+            class="flex !w-full rounded-md text-sm font-medium mt-5"
             type="info"
             strong
-            secondary
             attr-type="submit"
           >
             Create an account
@@ -68,9 +67,8 @@
           <router-link to="/login">
             <n-button
               strong
-              secondary
               type="primary"
-              class="flex w-full rounded-md text-sm font-medium"
+              class="flex !w-full rounded-md text-sm font-medium"
               attr-type="submit"
             >
               Already a member?

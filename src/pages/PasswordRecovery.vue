@@ -29,10 +29,9 @@
       <ButtonOrButton>
         <template #first>
           <n-button
-            class="flex w-full rounded-md text-sm font-medium mt-5"
+            class="flex !w-full rounded-md mt-5"
             type="info"
             strong
-            secondary
             attr-type="submit"
           >
             Reset password
@@ -40,12 +39,7 @@
         </template>
         <template #second>
           <router-link to="/login">
-            <n-button
-              strong
-              secondary
-              type="primary"
-              class="flex w-full rounded-md text-sm font-medium"
-            >
+            <n-button strong type="primary" class="flex !w-full rounded-md">
               Login
             </n-button>
           </router-link>

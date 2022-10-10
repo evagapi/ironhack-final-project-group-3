@@ -13,7 +13,7 @@
 
     <ul class="menu">
       <li>
-        <n-button v-if="auth.user" strong color="#aa2222" @click="logOut">
+        <n-button v-if="auth.user" type="error" strong @click="logOut">
           Log out</n-button
         >
       </li>

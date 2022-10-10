@@ -9,7 +9,7 @@
           Oops! We couldn't find that page.
         </p>
         <router-link to="/">
-          <n-button type="info" class="text-black">Take me home</n-button>
+          <n-button type="info">Take me home</n-button>
         </router-link>
       </div>
       <img src="https://i.ibb.co/G9DC8S0/404-2.png" />

@@ -33,10 +33,9 @@
       <ButtonOrButton>
         <template #first>
           <n-button
-            class="flex w-full rounded-md text-sm font-medium mt-5"
+            class="flex !w-full rounded-md text-sm font-medium"
             type="info"
             strong
-            secondary
             attr-type="submit"
           >
             Login
@@ -46,9 +45,8 @@
           <router-link to="/register">
             <n-button
               strong
-              secondary
               type="primary"
-              class="flex w-full rounded-md text-sm font-medium"
+              class="flex !w-full rounded-md text-sm font-medium"
             >
               Create a new account?
             </n-button>

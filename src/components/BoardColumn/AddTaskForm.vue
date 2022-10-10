@@ -16,6 +16,7 @@
       <n-form-item>
         <n-button
           :disabled="!isValid"
+          type="primary"
           class="bg-white text-black"
           attr-type="submit"
         >
@@ -24,11 +25,10 @@
       </n-form-item>
       <n-form-item>
         <n-button
-          class="bg-red-100"
           type="error"
           title="Delete column"
           @click="removeColumn(index)"
-          >🔥</n-button
+          >🗑️</n-button
         >
       </n-form-item>
     </NForm>

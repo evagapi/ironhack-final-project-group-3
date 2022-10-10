@@ -32,10 +32,9 @@
       </n-form-item>
 
       <n-button
-        class="flex w-full rounded-md text-sm font-medium mt-5"
+        class="flex !w-full rounded-md text-sm font-medium mt-5"
         type="info"
         strong
-        secondary
         attr-type="submit"
       >
         Confirm new password

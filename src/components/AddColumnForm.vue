@@ -23,7 +23,7 @@
           <n-input v-model:value="formValue.column" placeholder="Column" />
         </n-form-item>
         <n-form-item>
-          <n-button attr-type="submit"> Add </n-button>
+          <n-button type="primary" attr-type="submit"> Add </n-button>
         </n-form-item>
       </NForm>
     </div>

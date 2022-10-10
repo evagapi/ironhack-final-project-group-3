@@ -14,22 +14,17 @@
         <n-input v-model:value="formValue.task" placeholder="Task" />
       </n-form-item>
       <n-form-item>
-        <n-button
-          :disabled="!isValid"
-          type="primary"
-          class="bg-white text-black"
-          attr-type="submit"
-        >
+        <n-button type="primary" :disabled="!isValid" attr-type="submit">
           Add
         </n-button>
       </n-form-item>
       <n-form-item>
-        <n-button
-          type="error"
-          title="Delete column"
-          @click="removeColumn(index)"
-          >🗑️</n-button
-        >
+        <n-popconfirm @positive-click="handlePositiveClick(index)">
+          <template #trigger>
+            <n-button type="error" title="Delete column">🗑️</n-button>
+          </template>
+          Do you want to delete this column?
+        </n-popconfirm>
       </n-form-item>
     </NForm>
   </div>
@@ -37,7 +32,14 @@
 
 <script setup>
 import { reactive, ref, defineProps } from "vue";
-import { NForm, NFormItem, NInput, NButton, useMessage } from "naive-ui";
+import {
+  NForm,
+  NFormItem,
+  NInput,
+  NButton,
+  useMessage,
+  NPopconfirm,
+} from "naive-ui";
 
 import { useTasksStore } from "../../stores/TasksStore";
 
@@ -70,7 +72,7 @@ const rules = {
       isValid.value = true;
       return true;
     },
-    trigger: ["input"],
+    trigger: ["blur"],
   },
 };
 
@@ -87,6 +89,11 @@ function handleSubmit(e) {
       console.log(errors);
       message.error("A task must not be empty");
     });
+}
+
+function handlePositiveClick(index) {
+  removeColumn(index);
+  message.success("Column deleted successfully.");
 }
 </script>
 

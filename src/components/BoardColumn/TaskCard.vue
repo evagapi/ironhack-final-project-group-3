@@ -4,7 +4,12 @@
       <p>{{ task.title }}</p>
       <div class="flex gap-2">
         <button @click="showModal = true">✏</button>
-        <button @click="removeTask(columnIndex, index)">🧹</button>
+        <n-popconfirm @positive-click="handlePositiveClick(columnIndex, index)">
+          <template #trigger>
+            <button>🧹</button>
+          </template>
+          Do you want to delete this task?
+        </n-popconfirm>
       </div>
     </div>
     <n-modal v-model:show="showModal">
@@ -58,6 +63,7 @@ import {
   NInput,
   NButton,
   useMessage,
+  NPopconfirm,
 } from "naive-ui";
 
 import { useTasksStore } from "../../stores/TasksStore";
@@ -99,5 +105,10 @@ function handleSubmit() {
       console.log(errors);
       message.error("A task must not be empty");
     });
+}
+
+function handlePositiveClick(columnIndex, index) {
+  removeTask(columnIndex, index);
+  message.success("Task deleted successfully.");
 }
 </script>

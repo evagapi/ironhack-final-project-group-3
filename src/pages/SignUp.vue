@@ -56,6 +56,7 @@
         <template #first>
           <n-button
             class="flex !w-full rounded-md text-sm font-medium mt-5"
+            color="#434190"
             type="info"
             strong
             attr-type="submit"
@@ -67,6 +68,7 @@
           <router-link to="/login">
             <n-button
               strong
+              color="#be185d"
               type="primary"
               class="flex !w-full rounded-md text-sm font-medium"
               attr-type="submit"

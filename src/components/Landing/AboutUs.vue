@@ -30,7 +30,7 @@
 const team = [
   {
     name: "Alejo Cereto",
-    title: "Does stuff!",
+    title: "Tailwind is cool! ⭐",
     picture: "/images/avatar-alejo.png",
   },
   {

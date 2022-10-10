@@ -36,6 +36,7 @@
         type="info"
         strong
         attr-type="submit"
+        color="#be185d"
       >
         Confirm new password
       </n-button>

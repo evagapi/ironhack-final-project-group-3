@@ -80,7 +80,7 @@ function handleSubmit(e) {
     })
     .catch((errors) => {
       console.log(errors);
-      message.error("A column must not be empty");
+      message.error("You must enter a column name");
     });
 }
 </script>

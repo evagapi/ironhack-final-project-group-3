@@ -1,7 +1,9 @@
 <template>
   <div class="my-12 shadow-lg w-80 p-4 flex flex-col bg-slate-100 rounded-lg">
     <div v-if="auth.user">
-      <h2 class="font-medium leading-tight text-2xl text-grey-600 mt-2 p-2">
+      <h2
+        class="font-medium leading-tight text-3xl text-grey-600 mt-6 p-4 mb-5"
+      >
         Keep up the good work!
       </h2>
       <router-link :to="{ name: 'dashboard' }">
@@ -9,9 +11,11 @@
           class="flex w-full rounded-md text-sm font-medium mt-1"
           type="info"
           strong
-          secondary
+          primary
+          size="large"
+          color="#be185d"
         >
-          My dashboard
+          Access My dashboard
         </n-button>
       </router-link>
     </div>

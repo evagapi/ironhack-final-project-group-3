@@ -30,6 +30,7 @@
         <template #first>
           <n-button
             class="flex !w-full rounded-md mt-5"
+            color="#be185d"
             type="info"
             strong
             attr-type="submit"
@@ -39,7 +40,12 @@
         </template>
         <template #second>
           <router-link to="/login">
-            <n-button strong type="primary" class="flex !w-full rounded-md">
+            <n-button
+              strong
+              color="#434190"
+              type="primary"
+              class="flex !w-full rounded-md"
+            >
               Login
             </n-button>
           </router-link>

@@ -35,6 +35,7 @@
           <n-button
             class="flex !w-full rounded-md text-sm font-medium"
             type="info"
+            color="#434190"
             strong
             attr-type="submit"
           >
@@ -45,6 +46,7 @@
           <router-link to="/register">
             <n-button
               strong
+              color="#be185d"
               type="primary"
               class="flex !w-full rounded-md text-sm font-medium"
             >

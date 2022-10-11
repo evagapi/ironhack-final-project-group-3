@@ -53,6 +53,14 @@ router.beforeEach(async (to) => {
   if (!user && to.name === "dashboard") {
     return { name: "login" };
   }
+  if (
+    (user && to.name === "register") ||
+    (user && to.name === "login") ||
+    (user && to.name === "change-password") ||
+    (user && to.name === "forgot-password")
+  ) {
+    return { name: "dashboard" };
+  }
 });
 
 export default router;

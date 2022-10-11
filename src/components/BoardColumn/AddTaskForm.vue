@@ -65,7 +65,7 @@ const rules = {
   task: {
     required: true,
     validator(rule, value) {
-      if (!value || value.length <= 3) {
+      if (!value || value.length < 3) {
         isValid.value = false;
         return new Error("A task must have more than 3 letters.");
       }
@@ -85,8 +85,7 @@ function handleSubmit(e) {
       formValue.task = "";
       message.success("New task added");
     })
-    .catch((errors) => {
-      console.log(errors);
+    .catch(() => {
       message.error("A task must not be empty");
     });
 }

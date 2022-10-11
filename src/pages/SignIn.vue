@@ -94,8 +94,7 @@ function handleSubmit(e) {
       await signIn(formValue.email, formValue.password);
       router.push({ name: "dashboard" });
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(() => {
       message.error("Please enter your email and a password");
     });
 }

@@ -78,8 +78,7 @@ function handleSubmit(e) {
         showModal.value = false;
       }
     })
-    .catch((errors) => {
-      console.log(errors);
+    .catch(() => {
       message.error("A column must not be empty");
     });
 }

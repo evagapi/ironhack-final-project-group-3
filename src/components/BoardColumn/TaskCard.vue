@@ -1,4 +1,3 @@
-<!-- eslint-disable max-lines -->
 <template>
   <div>
     <div class="cursor-grab bg-white rounded p-2 mb-4 flex justify-between">
@@ -108,7 +107,6 @@ function handleSubmit() {
       message.success("Task has been successfully edited");
     })
     .catch(() => {
-      // eslint-disable-next-line max-lines
       message.error("Please enter a task description");
     });
 }

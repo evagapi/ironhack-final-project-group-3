@@ -87,7 +87,7 @@ const formRef = ref(null);
 const rules = {
   task: {
     required: true,
-    validator(value) {
+    validator(rule, value) {
       if (!value || value.length < 3) {
         isValid.value = false;
         return new Error("A task must have more than 3 letters.");

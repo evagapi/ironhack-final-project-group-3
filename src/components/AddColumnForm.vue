@@ -4,7 +4,7 @@
     @click="showModal = true"
   >
     <div class="text-3xl font-bold text-center text-gray-500">
-      <p class="text-6xl text-gray-500">+</p>
+      <p class="text-6xl">+</p>
       <p>Add column</p>
     </div>
   </div>

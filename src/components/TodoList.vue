@@ -1,5 +1,5 @@
 <template>
-  <div class="main-full-height pt-8">
+  <div class="main-full-height pt-7">
     <div v-if="isLoading" class="columns-wrapper">
       <n-skeleton :width="350" :sharp="false" :height="450" />
       <n-skeleton :width="350" :sharp="false" :height="450" />

@@ -1,5 +1,5 @@
 <template>
-  <div class="form-wrapper bg-slate-400">
+  <div class="form-wrapper bg-slate-400 rounded-br-lg rounded-bl-lg">
     <NForm
       ref="formRef"
       inline

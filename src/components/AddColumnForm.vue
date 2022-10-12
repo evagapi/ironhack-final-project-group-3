@@ -3,7 +3,7 @@
     class="cursor-pointer w-80 rounded-lg bg-white flex justify-center items-center gap-2 flex-col border-8 border-slate-300 hover:bg-slate-100"
     @click="showModal = true"
   >
-    <div class="text-3xl font-bold text-center">
+    <div class="text-3xl font-bold text-center text-gray-500">
       <p class="text-6xl">+</p>
       <p>Add column</p>
     </div>

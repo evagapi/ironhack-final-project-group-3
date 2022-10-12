@@ -104,10 +104,10 @@ function handleSubmit() {
     .then(() => {
       showModal.value = false;
       editTask(props.columnIndex, props.index, formValue.task);
-      message.success("Save edited task");
+      message.success("Task has been successfully edited");
     })
     .catch(() => {
-      message.error("A task must not be empty");
+      message.error("Please enter a task description");
     });
 }
 

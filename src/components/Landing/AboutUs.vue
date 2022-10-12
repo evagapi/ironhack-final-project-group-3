@@ -12,7 +12,7 @@
         <img
           :alt="item.name"
           :src="item.picture"
-          class="shadow-lg rounded-full max-w-full mx-auto hover:scale-110"
+          class="shadow-lg rounded-full max-w-full mx-auto transition delay-150 duration-300 ease-in-out hover:scale-110"
           style="max-width: 120px"
         />
         <div class="pt-6 text-center">
@@ -30,7 +30,7 @@
 const team = [
   {
     name: "Alejo Cereto",
-    title: "Does stuff!",
+    title: "Tailwind is cool! ✨",
     picture: "/images/avatar-alejo.png",
   },
   {

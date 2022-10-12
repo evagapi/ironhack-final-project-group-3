@@ -1,5 +1,7 @@
 <template>
-  <div class="flex justify-between pb-4">
+  <div
+    class="bg-gradient-to-r from-teal-400 to-blue-500 focus:from-pink-500 focus:to-orange-500 text-white font-semibold px-6 py-3 rounded flex justify-between pb-4"
+  >
     <span
       :class="index === 0 ? 'invisible' : 'cursor-pointer text-xl'"
       @click="moveColumnToLeft(index)"

@@ -1,3 +1,4 @@
+<!-- eslint-disable max-lines -->
 <template>
   <div>
     <div class="cursor-grab bg-white rounded p-2 mb-4 flex justify-between">
@@ -86,7 +87,7 @@ const formRef = ref(null);
 const rules = {
   task: {
     required: true,
-    validator(rule, value) {
+    validator(value) {
       if (!value || value.length < 3) {
         isValid.value = false;
         return new Error("A task must have more than 3 letters.");
@@ -107,6 +108,7 @@ function handleSubmit() {
       message.success("Save edited task");
     })
     .catch(() => {
+      // eslint-disable-next-line max-lines
       message.error("A task must not be empty");
     });
 }

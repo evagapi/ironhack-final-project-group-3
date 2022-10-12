@@ -108,6 +108,7 @@ function handleSubmit() {
       message.success("Task has been successfully edited");
     })
     .catch(() => {
+      // eslint-disable-next-line max-lines
       message.error("Please enter a task description");
     });
 }

@@ -26,7 +26,9 @@
             <div
               class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
             >
-              <div class="px-4 py-5 flex-auto hover:shadow-2xl">
+              <div
+                class="px-4 py-5 flex-auto transition delay-150 duration-300 ease-in-out hover:shadow-2xl"
+              >
                 <div
                   class="text-xl text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-amber-500"
                 >
@@ -43,7 +45,9 @@
             <div
               class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
             >
-              <div class="px-4 py-5 flex-auto hover:shadow-2xl">
+              <div
+                class="px-4 py-5 flex-auto transition delay-150 duration-300 ease-in-out hover:shadow-2xl"
+              >
                 <div
                   class="text-xl text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400"
                 >
@@ -61,7 +65,9 @@
             <div
               class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
             >
-              <div class="px-4 py-5 flex-auto hover:shadow-2xl">
+              <div
+                class="px-4 py-5 flex-auto transition delay-150 duration-300 ease-in-out hover:shadow-2xl"
+              >
                 <div
                   class="text-xl text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400"
                 >

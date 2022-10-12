@@ -54,7 +54,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to left, #1190cb, #7dccff);
+  background: linear-gradient(to left, black, #06293a);
   color: #fff;
   height: 55px;
   padding: 1em;

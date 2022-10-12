@@ -91,8 +91,7 @@ function handleSubmit(e) {
       isSubmitted.value = true;
       loadingBar.finish();
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(() => {
       message.error("Please enter your email");
     });
 }

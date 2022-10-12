@@ -32,11 +32,7 @@
           </n-form-item>
           <n-form-item>
             <div class="flex gap-2">
-              <n-button
-                class="bg-white text-black"
-                type="primary"
-                attr-type="submit"
-              >
+              <n-button :disabled="!isValid" type="primary" attr-type="submit">
                 Save
               </n-button>
               <n-button
@@ -70,6 +66,8 @@ import { useTasksStore } from "../../stores/TasksStore";
 
 const { removeTask, editTask } = useTasksStore();
 
+const isValid = ref(false);
+
 const props = defineProps({
   index: { type: Number, required: true },
   task: { type: Object, required: true },
@@ -88,8 +86,15 @@ const formRef = ref(null);
 const rules = {
   task: {
     required: true,
-    message: "Please enter your task",
-    trigger: ["input"],
+    validator(rule, value) {
+      if (!value || value.length < 3) {
+        isValid.value = false;
+        return new Error("A task must have more than 3 letters.");
+      }
+      isValid.value = true;
+      return true;
+    },
+    trigger: ["blur"],
   },
 };
 
@@ -101,8 +106,7 @@ function handleSubmit() {
       editTask(props.columnIndex, props.index, formValue.task);
       message.success("Save edited task");
     })
-    .catch((errors) => {
-      console.log(errors);
+    .catch(() => {
       message.error("A task must not be empty");
     });
 }

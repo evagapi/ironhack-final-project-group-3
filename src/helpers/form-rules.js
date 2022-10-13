@@ -7,7 +7,7 @@ export const email = {
 
     return true;
   },
-  trigger: ["blur"],
+  trigger: ["input"],
 };
 
 export const password = {
@@ -19,5 +19,5 @@ export const password = {
 
     return true;
   },
-  trigger: ["blur"],
+  trigger: ["input"],
 };

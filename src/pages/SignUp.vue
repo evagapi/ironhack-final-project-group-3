@@ -118,7 +118,7 @@ const rules = {
 
       return true;
     },
-    trigger: ["blur"],
+    trigger: ["input"],
   },
   terms: {
     validator(rule, value) {

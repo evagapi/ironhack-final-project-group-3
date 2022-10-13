@@ -94,7 +94,7 @@ const rules = {
       isValid.value = true;
       return true;
     },
-    trigger: ["blur"],
+    trigger: ["input"],
   },
 };
 

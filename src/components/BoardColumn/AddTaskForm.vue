@@ -1,5 +1,7 @@
 <template>
-  <div class="form-wrapper bg-slate-400 rounded-br-lg rounded-bl-lg">
+  <div
+    class="bg-slate-400 rounded-br-lg rounded-bl-lg m-auto px-4 pb-24 relative"
+  >
     <NForm
       ref="formRef"
       inline
@@ -7,10 +9,10 @@
       :model="formValue"
       :rules="rules"
       size="small"
-      class=""
+      class="absolute"
       @submit="handleSubmit"
     >
-      <n-form-item path="task">
+      <n-form-item path="task" class="max-w-[150px]">
         <n-input v-model:value="formValue.task" placeholder="Task" />
       </n-form-item>
       <n-form-item>
@@ -72,7 +74,7 @@ const rules = {
       isValid.value = true;
       return true;
     },
-    trigger: ["blur"],
+    trigger: ["input"],
   },
 };
 
@@ -95,10 +97,3 @@ function handlePositiveClick(index) {
   message.success("Column deleted successfully.");
 }
 </script>
-
-<style scoped>
-.form-wrapper {
-  padding: 0 1rem;
-  margin: auto;
-}
-</style>

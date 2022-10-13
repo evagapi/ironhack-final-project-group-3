@@ -72,7 +72,7 @@ const rules = {
 
       return true;
     },
-    trigger: ["blur"],
+    trigger: ["input"],
   },
 };
 
